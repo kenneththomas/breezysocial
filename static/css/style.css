@@ -923,7 +923,7 @@ div.mini-molt:hover div.mini-molt:hover {
 .mini-molt-media-container {
     /* Constant aspect ratio hack */
     height: 0px;
-    padding-top: 56%;
+    padding-top: 100%;
     overflow: hidden;
     position: relative;
 }
