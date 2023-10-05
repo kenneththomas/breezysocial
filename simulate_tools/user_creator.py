@@ -85,30 +85,8 @@ def create_user(username=random_username(),displayname=random_username(),descrip
     c.execute("SELECT id FROM following ORDER BY id DESC LIMIT 1")
     follower_latest_id = c.fetchone()[0] + 1
 
-    #insert into following table id = follower_latest_id, follower_id = latest_id + 1, following_id = 4
-    c.execute("INSERT INTO following VALUES (?, ?, ?)", (follower_latest_id, latest_id + 1, 4))
-
-    #add notification
-    #get latest id from notification table, increment by 1
-    c.execute("SELECT id FROM notification ORDER BY id DESC LIMIT 1")
-    notification_latest_id = c.fetchone()[0] + 1
-
-    #current timestamp UTC, format 2023-07-10 14:35:42.042890
-    timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S.%f")
-
-    #copy id 29 from notification table as an example and save to temp table
-    c.execute("CREATE TABLE temp AS SELECT * FROM notification WHERE id=29")
-    # set id to notification_latest_id, set recipient_id to 4, sender_id to latest_id + 1, set type to follow, timestamp to current timestamp
-    c.execute("UPDATE temp SET id=?, recipient_id=?, sender_id=?, type=?, timestamp=?", (notification_latest_id, 4, latest_id + 1, 'follow', timestamp))
-
-    #insert temp table into notification table
-    c.execute("INSERT INTO notification SELECT * FROM temp")
-
-    #delete temp table
-    c.execute("DROP TABLE temp")
-
-    #commit changes
-    conn.commit()
-    
     #close db
     conn.close()
+
+    #everyone follows me
+    force_follow.force_follow(latest_id + 1,4)
