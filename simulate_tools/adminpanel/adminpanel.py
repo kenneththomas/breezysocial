@@ -61,7 +61,8 @@ def create_account():
         print(f'username: {username} display_name: {display_name} bio: {bio}')
 
         user_creator.create_user(username, display_name, bio)
-        return redirect(url_for('index'))  # Redirect to home page (or a different page) after account creation.
+
+        return render_template('create_account.html', username=username, display_name=display_name, bio=bio)
 
     return render_template('create_account.html')  # Render account creation page if method is GET.
 
