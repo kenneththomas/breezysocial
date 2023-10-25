@@ -316,9 +316,9 @@
                         <!-- Member duration -->
                         <li>Member for <strong class="text-primary">{{this_user.days_active | commafy}}</strong> days</li>
                         <!-- Molts published -->
-                        <li><strong class="text-primary">{{this_user.molt_count | commafy}}</strong> Molt{{this_user.molts_count | pluralize}} published</li>
+                        <li><strong class="text-primary">{{this_user.molt_count | commafy}}</strong> Poast{{this_user.molts_count | pluralize}} published</li>
                         <!-- Molts liked -->
-                        <li>Liked <strong class="text-primary">{{this_user.like_count | commafy}}</strong> Molt{{this_user.like_count | pluralize}}</li>
+                        <li>Liked <strong class="text-primary">{{this_user.like_count | commafy}}</strong> Poast{{this_user.like_count | pluralize}}</li>
                         {% if this_user.lastfm %}
                             <!-- Scrobble count -->
                             <li class="font-0">
@@ -374,7 +374,7 @@
         <!-- Tab switcher -->
         <div class="row mx-0">
             <div id="molts-btn" class="profile-box-category mt-2 col {{ 'active' if current_tab == 'molts' else '' }}" onclick="switchTo('molts');">
-                <div class="py-2"><strong class="d-inline-block w-100 text-center">Molts</strong></div>
+                <div class="py-2"><strong class="d-inline-block w-100 text-center">Poasts</strong></div>
             </div>
             <div id="replies-btn" class="profile-box-category mt-2 col {{ 'active' if current_tab == 'replies' else '' }}" onclick="switchTo('replies');">
                 <div class="py-2"><strong class="d-inline-block w-100 text-center">Replies</strong></div>

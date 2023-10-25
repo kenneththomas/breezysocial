@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #edf0f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 500px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+h1 {
+    color: #3b5998;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    border: 1px solid #bdc7d8;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    background-color: #4267b2;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="submit"]:hover {
+    background-color: #365899;
+}
+
+#message {
+    margin-top: 20px;
+    color: #3b5998;
+}
+
+img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.tweet-box {
+    background-color: #f8f8f8;  /* Light grey background */
+    border: 1px solid #ddd;  /* Grey border */
+    border-radius: 8px;  /* Rounded corners */
+    margin-top: 20px;  /* Space above the box */
+    padding: 10px;  /* Inner spacing */
+    max-width: 500px;  /* Maximum width */
+}
+
+.tweet-header {
+    color: #1DA1F2;  /* Twitter's brand color for text */
+    font-size: 20px;  /* Font size */
+    margin-bottom: 10px;  /* Space below the header */
+}
+
+.tweet-content {
+    display: flex;  /* Align image and text side by side */
+    align-items: top;  /* Align items at the top */
+}
+
+.profile-pic {
+    border-radius: 50%;  /* Rounded image */
+    width: 100px;  /* Image width */
+    height: 100px;  /* Image height */
+    margin-right: 15px;  /* Space to the right of the image */
+}
+
+.tweet-text {
+    font-size: 16px;  /* Text font size */
+    color: #333;  /* Dark grey text */
+}
+
+.username {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* Using the bold weight */
+    font-size: 24px;
+    color: #333; 
+}
