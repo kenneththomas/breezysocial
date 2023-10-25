@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 import sys
 sys.path.append('../')
 sys.path.append('../simulate_tools')
-from simulate_tools.poast import poast, get_profile_picture, get_all_users, like_poast
+from simulate_tools.poast import poast, get_profile_picture, get_all_users, like_poast, verify_user
 import datetime
 import random
 import mt_tweet
@@ -57,10 +57,14 @@ def create_account():
         username = request.form.get('username')
         display_name = request.form.get('display_name')
         bio = request.form.get('bio')
+        verify_account = request.form.get('verify_account')
         
         print(f'username: {username} display_name: {display_name} bio: {bio}')
 
         user_creator.create_user(username, display_name, bio)
+        
+        if verify_account == 'on':
+            verify_user(username)
 
         return render_template('create_account.html', username=username, display_name=display_name, bio=bio)
 
