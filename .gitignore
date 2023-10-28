@@ -71,3 +71,5 @@ package-lock.json
 package.json
 node_modules
 maricon.py
+simulate_tools/thegram/*
+simulate_tools/personality.py
