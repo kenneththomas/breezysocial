@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">    
+</head>
+<body>
+    <div class="container">
+    <h1>Create Account</h1>
+    <form method="POST" action="{{ url_for('create_account') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="display_name">Display Name:</label>
+        <input type="text" id="display_name" name="display_name" required><br>
+
+        <label for="location">Bio:</label>
+        <textarea name="bio" placeholder="what it do?" required rows="5"></textarea>
+
+        <label for="verify_account">Verify Account:</label>
+        <input type="checkbox" id="verify_account" name="verify_account"><br>
+
+        <input type="submit" value="Create Account">
+    </form>
+    </div>
+</body>
+</html>

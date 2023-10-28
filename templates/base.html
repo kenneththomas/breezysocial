@@ -274,7 +274,7 @@
                     <svg class="btn-icon d-lg-none" width="28" height="28" data-jam="write">
                         <use href="{{sprite_url}}?version={{server_start}}#write"></use>
                     </svg>
-                    <strong class="d-none d-lg-inline-block">Molt</strong>
+                    <strong class="d-none d-lg-inline-block">Poast</strong>
                 </button>
 
                 <!-- Stats page button -->
@@ -493,7 +493,7 @@
                                 <form action={{location}} method="POST" enctype="multipart/form-data" onsubmit="return subMolt(this);">
                                     <div class="mini-compose-reply-textarea">
                                         <textarea onfocus="currentForm = this.form;" onfocusout="currentForm = null;" name="molt_content" rows="5" class="my-2 w-100"
-                                            placeholder="Remember to be kind"></textarea>
+                                            placeholder="Talk ur shit"></textarea>
                                         <div class="compose-image-preview large-molt-media-container d-none mb-2 border border-dark rounded-media zindex-front" {{macros.expand_img()}}>
                                             <input type="text" name="img_description" placeholder="image description"
                                                    onkeydown="return blockSubmit(event);"
@@ -568,7 +568,7 @@
                                 <form action={{location}} method="POST" enctype="multipart/form-data" onsubmit="return subMolt(this);">
                                     <div class="mini-compose-reply-textarea">
                                         <textarea onfocus="currentForm = this.form;" onfocusout="currentForm = null;" name="molt_content" rows="5" class="my-2 w-100"
-                                            placeholder="Remember to be kind"></textarea>
+                                            placeholder="What u thinkin bout?"></textarea>
                                         <div class="compose-image-preview large-molt-media-container d-none mb-2 border border-dark rounded-media zindex-front" {{macros.expand_img()}}>
                                             <input type="text" name="img_description" placeholder="image description"
                                                    onkeydown="return blockSubmit(event);"
@@ -630,7 +630,7 @@
                             <button type="button" class="close text-primary" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            <strong>Editing your own Molt</a></strong>
+                            <strong>Editing your own Poast</a></strong>
                         </div>
                         <div class="modal-body row">
                             <div class="mini-molt-profile-box col-lg-1 mr-2">
@@ -643,7 +643,7 @@
                                 <form action={{location}} method="POST" enctype="multipart/form-data" onsubmit="return subMolt(this);">
                                     <div class="mini-compose-reply-textarea">
                                         <textarea onfocus="currentForm = this.form;" onfocusout="currentForm = null;" id="edit-content" name="molt_content" rows="5" class="my-2 w-100"
-                                            placeholder="Remember to be kind" required></textarea>
+                                            placeholder="Talk ur shit" required></textarea>
                                     </div>
                                     <div class="mini-molt-actions d-flex flex-row justify-content-end w-100 compose-button-row">
                                         <span class="mini-character-counter text-muted my-auto mr-3 d-none">{{MOLT_CHAR_LIMIT}}</span>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penthouse - Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Post a Tweet</h1>
+        <form id="tweetForm" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <textarea name="tweet" placeholder="What's on your mind?" required rows="5"></textarea>
+            <input type="text" name="reply_id" placeholder="Reply ID (optional)">
+            <input type="text" name="likes" placeholder="Likes (optional)">
+            <input type="submit" value="Post">
+            <p>toggle below is GPT enable</p>
+            <input type="checkbox" id="gpt_toggle" name="gpt_toggle" value="Bike">
+        </form>
+        <div id="message"></div>
+    </div>
+
+
+    {% if latest_tweet and profile_picture %}
+    <section class="tweet-box">
+        <h2 class="tweet-header">@{{ username }}</h2>
+        <div class="tweet-content">
+            <img class="profile-pic" src="{{ profile_picture }}" alt="{{ username }}'s profile picture">
+            <p class="tweet-text">{{ latest_tweet }}</p>
+        </div>
+        {% if postid %}
+        <p class="tweet-text">ID: {{ postid }}</p>
+        {% endif %}
+    </section>
+    {% endif %}
+</body>
+
+</html>

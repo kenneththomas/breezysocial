@@ -1844,7 +1844,7 @@ class Molt(db.Model):
     @classmethod
     def create(cls, author, content, **kwargs):
         """Create new molt."""
-        kwargs["source"] = kwargs.get("source", "Crabber Web App")
+        kwargs["source"] = kwargs.get("source", "A Customized Experience™")
         new_molt = cls(
             author=author, content=content[: config.MOLT_CHAR_LIMIT], **kwargs
         )
