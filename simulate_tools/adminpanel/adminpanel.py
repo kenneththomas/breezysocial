@@ -82,4 +82,4 @@ def like_resource(username, postid, likes):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run("0.0.0.0", port, debug=True)
