@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='admin_styles.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 </head>
 
 <body>
@@ -16,17 +16,17 @@
         <h1>Post a Tweet</h1>
         <form id="tweetForm" method="POST">
             <input type="text" name="username" placeholder="Username" required>
-            <textarea name="tweet" placeholder="What's on your mind?" required rows="5"></textarea>
+            <textarea name="tweet" placeholder="What's on your mind?" required rows="4"></textarea>
             <input type="text" name="reply_id" placeholder="Reply ID (optional)">
             <input type="text" name="likes" placeholder="Likes (optional)">
-            <input type="submit" value="Post">
-            <p>toggle below is GPT enable</p>
-            <input type="checkbox" id="gpt_toggle" name="gpt_toggle" value="Bike">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="gpt_toggle" name="gpt_toggle">
+                <label for="gpt_toggle" class="checkbox-label">Enable GPT</label>
+            </div>
+            <input type="submit" value="Post Tweet">
         </form>
         <div id="message"></div>
     </div>
-
-
     {% if latest_tweet and profile_picture %}
     <section class="tweet-box">
         <h2 class="tweet-header">@{{ username }}</h2>

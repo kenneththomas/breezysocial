@@ -14,6 +14,7 @@ from simulate_tools.poast import poast, get_profile_picture, get_all_users, like
 app = Flask(__name__, static_folder='../../static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////CRABBER_DATABASE.db'
 app.config['SECRET_KEY'] = 'replace-with-a-secure-random-key'
+app.config['SESSION_COOKIE_NAME'] = 'admin_session'
 db = SQLAlchemy(app)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -40,7 +41,7 @@ def index():
             print("Checkbox is checked")
             tweet = mt_tweet.npctweet_v2(username, tweet)
         
-        postid = poast(username, tweet, datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S.%f"), isreply)
+        postid = poast(username, tweet, datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%m:%S.%f"), isreply)
         flash("Tweet posted!")
         # if likes is int, then like the post
         if likes.isdigit():
