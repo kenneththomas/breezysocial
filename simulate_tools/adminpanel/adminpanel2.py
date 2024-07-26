@@ -9,6 +9,7 @@ import time
 sys.path.append('../')
 sys.path.append('../simulate_tools')
 import mt_tweet
+from simulate_tools.poast import poast, get_profile_picture, get_all_users, like_poast, verify_user
 
 app = Flask(__name__, static_folder='../../static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////CRABBER_DATABASE.db'
